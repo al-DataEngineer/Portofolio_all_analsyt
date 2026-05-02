@@ -4,22 +4,20 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Contact | Ahmad Alimin</title>
+    <meta name="description" content="Hubungi Ahmad Alimin - Data Scientist. Email, LinkedIn, GitHub, dan WhatsApp." />
+    <title>Kontak | Ahmad Alimin</title>
     <link rel="icon" type="image/png" href="favicon.png" />
 
-    <!-- Assets -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@600;700;800&display=swap"
         rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
     <script src="tailwind-config.js"></script>
     <link rel="stylesheet" href="global.css" />
 
     <style>
-        /* Input Primitives */
         input,
         select,
         textarea {
@@ -48,36 +46,39 @@
     <main class="pt-32">
         <!-- @hero-contact -->
         <section class="max-w-7xl mx-auto px-6 md:px-8 mb-16 md:mb-24 reveal">
-            <p class="font-label uppercase tracking-widest text-outline-variant mb-6 text-xs font-bold">Inquiry</p>
+            <p
+                class="font-label uppercase tracking-widest text-outline-variant mb-6 text-xs font-bold inline-flex items-center gap-2">
+                <span class="w-4 h-px bg-outline-variant"></span>Inquiry
+            </p>
             <h1
-                class="font-headline text-4xl md:text-6xl font-black tracking-tighter text-on-surface leading-[1.1] mb-12">
-                Mari bangun<br>sesuatu yang <span class="text-primary-dim">bermakna</span><br>bersama.
+                class="font-headline text-4xl md:text-7xl font-black tracking-tighter text-on-surface leading-[1.1] mb-6">
+                Mari bangun<br>sesuatu yang <span class="text-gradient">bermakna</span><br>bersama.
             </h1>
+            <p class="text-on-surface-variant text-lg mb-12 max-w-xl italic opacity-70">Terbuka untuk kolaborasi,
+                pertanyaan profesional, dan peluang kerja menarik.</p>
         </section>
 
         <!-- @content-grid -->
         <section class="max-w-7xl mx-auto px-6 md:px-8 mb-24 md:mb-40">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-20 items-start">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
 
                 <!-- Left Column Group -->
-                <div class="md:col-span-7 space-y-12">
+                <div class="md:col-span-7 space-y-8">
                     <!-- Minimalist Inquiry Trigger -->
                     <div id="open-form-trigger"
-                        class="bg-white dark:bg-slate-800 p-8 md:p-10 rounded-2xl reveal cursor-pointer group transition-all duration-500 border border-slate-200 dark:border-slate-700 hover:border-primary/30 shadow-md hover:shadow-2xl hover:-translate-y-1 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6">
+                        class="bg-white glass-card p-8 md:p-12 rounded-[2.5rem] reveal cursor-pointer group transition-all duration-500 border border-outline shadow-md hover-lift flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-8">
                         <div
-                            class="w-16 h-16 shrink-0 bg-primary/5 rounded-2xl flex items-center justify-center group-hover:bg-primary/10 group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500 shadow-inner">
+                            class="w-20 h-20 shrink-0 bg-primary/5 rounded-3xl flex items-center justify-center group-hover:bg-primary transition-all duration-500">
                             <span
-                                class="material-symbols-outlined text-3xl text-primary drop-shadow-sm">edit_document</span>
+                                class="material-symbols-outlined text-4xl text-primary group-hover:text-white transition-colors">edit_document</span>
                         </div>
                         <div class="flex-1">
-                            <h3
-                                class="text-2xl font-headline font-black mb-2 text-on-surface group-hover:text-primary transition-colors">
-                                Tulis Pesan</h3>
-                            <p class="text-on-surface-variant text-sm leading-relaxed mb-6 italic">Punya tantangan
-                                proyek
-                                atau ingin berkolaborasi? Klik kotak ini untuk langsung memulai percakapan.</p>
+                            <h3 class="text-3xl font-headline font-black mb-2 text-on-surface">Tulis Pesan</h3>
+                            <p class="text-on-surface-variant text-sm leading-relaxed mb-6 italic opacity-70">Punya
+                                tantangan proyek atau ingin berkolaborasi? Klik kotak ini untuk langsung memulai
+                                percakapan.</p>
                             <div
-                                class="inline-flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-widest bg-primary/5 px-4 py-2 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
+                                class="inline-flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-widest bg-primary/5 px-6 py-3 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
                                 Buka Formulir <span
                                     class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
                             </div>
@@ -85,131 +86,150 @@
                     </div>
 
                     <!-- FAQ Section -->
-                    <div class="reveal mt-8">
-                        <h3 class="text-xl font-headline font-bold mb-6 flex items-center gap-3 text-on-surface">
+                    <div class="reveal space-y-3">
+                        <h3 class="text-xl font-headline font-bold mb-5 flex items-center gap-3">
                             <span class="material-symbols-outlined text-primary">forum</span> Info Singkat
                         </h3>
-                        <div class="grid grid-cols-1 gap-4">
-                            <div
-                                class="bg-surface-container-low/50 hover:bg-surface-container-low transition-colors border border-outline-variant/10 rounded-xl p-6">
-                                <h4 class="font-bold text-sm mb-2 text-on-surface">Berapa lama waktu respons email
-                                    biasanya?</h4>
-                                <p class="text-on-surface-variant text-sm leading-relaxed">Saya berusaha merespons
-                                    seluruh email profesional dan konsultasi dalam kurun waktu maksimal 1x24 jam kerja.
-                                </p>
-                            </div>
-                            <div
-                                class="bg-surface-container-low/50 hover:bg-surface-container-low transition-colors border border-outline-variant/10 rounded-xl p-6">
-                                <h4 class="font-bold text-sm mb-2 text-on-surface">Apakah terbuka untuk proyek lepas
-                                    (freelance)?</h4>
-                                <p class="text-on-surface-variant text-sm leading-relaxed">Ya, saya sangat terbuka.
-                                    Khususnya untuk pengembangan arsitektur analitik, ekstraksi data intelijen, maupun
-                                    perancangan model AI/ML skala spesifik.</p>
-                            </div>
-                            <div
-                                class="bg-surface-container-low/50 hover:bg-surface-container-low transition-colors border border-outline-variant/10 rounded-xl p-6">
-                                <h4 class="font-bold text-sm mb-2 text-on-surface">Menerima diskusi teknis & penelitian?
-                                </h4>
-                                <p class="text-on-surface-variant text-sm leading-relaxed">Tentu. Banyak rekam jejak
-                                    kerja sama saya terlahir dari rekan praktisi yang membutuhkan evaluasi skema data
-                                    dan pemecahan kasus analitik.</p>
-                            </div>
+                        <div class="bg-white glass-card border border-outline rounded-2xl p-6 hover-lift">
+                            <h4 class="font-bold text-sm mb-2">Berapa lama waktu respons email biasanya?</h4>
+                            <p class="text-on-surface-variant text-sm leading-relaxed opacity-80">Saya berusaha
+                                merespons seluruh email profesional dalam kurun waktu maksimal 1x24 jam kerja.</p>
+                        </div>
+                        <div class="bg-white glass-card border border-outline rounded-2xl p-6 hover-lift">
+                            <h4 class="font-bold text-sm mb-2">Apakah terbuka untuk proyek lepas (freelance)?</h4>
+                            <p class="text-on-surface-variant text-sm leading-relaxed opacity-80">Ya, sangat terbuka.
+                                Khususnya untuk pengembangan arsitektur analitik, ekstraksi data, dan model AI/ML.</p>
+                        </div>
+                        <div class="bg-white glass-card border border-outline rounded-2xl p-6 hover-lift">
+                            <h4 class="font-bold text-sm mb-2">Menerima diskusi teknis & penelitian?</h4>
+                            <p class="text-on-surface-variant text-sm leading-relaxed opacity-80">Tentu. Banyak
+                                kolaborasi saya lahir dari diskusi evaluasi skema data dan pemecahan kasus analitik.</p>
+                        </div>
 
-                            <!-- Box Link Uji Wawasan (Quiz Test) -->
-                            <a href="quiz.html" target="_self"
-                                class="block bg-primary text-on-primary rounded-xl p-6 mt-2 hover:bg-primary-dim transition-all duration-300 shadow-md shadow-primary/20 hover:-translate-y-1 group border border-primary-dim">
-                                <div
-                                    class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                                    <div class="flex items-center gap-5">
-                                        <div
-                                            class="w-12 h-12 shrink-0 bg-white/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                                            <span
-                                                class="material-symbols-outlined text-white text-2xl">psychology</span>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-bold text-base mb-1 text-white">Uji Wawasan AI & Data</h4>
-                                            <p class="text-primary-fixed text-xs leading-relaxed opacity-90">Tes
-                                                interaktif via Google Form untuk mengukur pengetahuan analitik.</p>
-                                        </div>
-                                    </div>
+                        <!-- Quiz Box -->
+                        <a href="quiz.html"
+                            class="block bg-primary text-on-primary rounded-2xl p-6 hover-lift transition-all shadow-md shadow-primary/20 group border border-primary-dim">
+                            <div class="flex items-center justify-between gap-4">
+                                <div class="flex items-center gap-4">
                                     <div
-                                        class="w-8 h-8 shrink-0 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-colors self-end sm:self-auto hidden sm:flex">
-                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                        class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-white text-2xl">psychology</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-base mb-1">Uji Wawasan AI & Data</h4>
+                                        <p class="text-white/70 text-xs">Tes interaktif untuk mengukur pengetahuan
+                                            analitik Anda.</p>
                                     </div>
                                 </div>
-                            </a>
-
-                        </div>
+                                <span
+                                    class="material-symbols-outlined text-white/50 group-hover:text-white group-hover:translate-x-1 transition-all">arrow_forward</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
 
-
                 <!-- Direct Channels -->
-                <div class="md:col-span-5 space-y-8">
-                    <div>
-                        <h3 class="text-xl font-bold mb-8">Saluran Langsung</h3>
-                        <div class="space-y-4">
+                <div class="md:col-span-5 space-y-6">
+                    <h3 class="text-xl font-bold flex items-center gap-2">
+                        <span class="w-4 h-px bg-primary"></span>Saluran Langsung
+                    </h3>
+                    <div class="space-y-3">
+                        <a href="mailto:ahmadalimin700@gmail.com"
+                            class="bg-white glass-card p-5 rounded-2xl border border-outline flex items-center gap-5 reveal shadow-sm hover-lift group">
                             <div
-                                class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 flex items-center gap-6 reveal shadow-sm hover:shadow-md">
-                                <div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-primary">mail</span>
-                                </div>
-                                <div>
-                                    <p class="text-[10px] uppercase font-black text-outline-variant mb-1">Email</p>
-                                    <p class="font-bold">ahmadalimin700@gmail.com</p>
-                                </div>
+                                class="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center group-hover:bg-primary transition-all">
+                                <span class="material-symbols-outlined text-primary group-hover:text-white">mail</span>
                             </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-[10px] uppercase font-black text-outline-variant mb-0.5">Email</p>
+                                <p class="font-bold text-sm truncate">ahmadalimin700@gmail.com</p>
+                            </div>
+                            <span class="material-symbols-outlined text-outline-variant text-sm">open_in_new</span>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/ahmad-alimin-186991394" target="_blank"
+                            class="bg-white glass-card p-5 rounded-2xl border border-outline flex items-center gap-5 reveal shadow-sm hover-lift group">
                             <div
-                                class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 flex items-center gap-6 reveal shadow-sm hover:shadow-md">
-                                <div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-primary">account_circle</span>
-                                </div>
-                                <div>
-                                    <p class="text-[10px] uppercase font-black text-outline-variant mb-1">LinkedIn</p>
-                                    <p class="font-bold">linkedin.com/in/ahmadalimin</p>
-                                </div>
+                                class="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center group-hover:bg-[#0077B5] transition-all">
+                                <svg class="text-primary group-hover:text-white" xmlns="http://www.w3.org/2000/svg"
+                                    width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                                </svg>
                             </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-[10px] uppercase font-black text-outline-variant mb-0.5">LinkedIn</p>
+                                <p class="font-bold text-sm truncate">Ahmad Alimin</p>
+                            </div>
+                            <span class="material-symbols-outlined text-outline-variant text-sm">open_in_new</span>
+                        </a>
+
+                        <a href="https://github.com/al-DataEngineer" target="_blank"
+                            class="bg-white glass-card p-5 rounded-2xl border border-outline flex items-center gap-5 reveal shadow-sm hover-lift group">
                             <div
-                                class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 flex items-center gap-6 reveal shadow-sm hover:shadow-md">
-                                <div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-primary">code</span>
-                                </div>
-                                <div>
-                                    <p class="text-[10px] uppercase font-black text-outline-variant mb-1">GitHub</p>
-                                    <p class="font-bold">github.com/aalimin</p>
-                                </div>
+                                class="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center group-hover:bg-slate-900 transition-all">
+                                <svg class="text-primary group-hover:text-white" xmlns="http://www.w3.org/2000/svg"
+                                    width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                                </svg>
                             </div>
-                        </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-[10px] uppercase font-black text-outline-variant mb-0.5">GitHub</p>
+                                <p class="font-bold text-sm">al-DataEngineer</p>
+                            </div>
+                            <span class="material-symbols-outlined text-outline-variant text-sm">open_in_new</span>
+                        </a>
+
+                        <a href="https://wa.me/6285293441552" target="_blank"
+                            class="bg-white glass-card p-5 rounded-2xl border border-outline flex items-center gap-5 reveal shadow-sm hover-lift group">
+                            <div
+                                class="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center group-hover:bg-[#25D366] transition-all">
+                                <svg class="text-primary group-hover:text-white" xmlns="http://www.w3.org/2000/svg"
+                                    width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                                </svg>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-[10px] uppercase font-black text-outline-variant mb-0.5">WhatsApp</p>
+                                <p class="font-bold text-sm">+62 852-9344-1552</p>
+                            </div>
+                            <span class="material-symbols-outlined text-outline-variant text-sm">open_in_new</span>
+                        </a>
                     </div>
 
-                    <!-- Map/Location -->
-                    <div class="bg-surface-container-low/50 p-8 md:p-10 rounded-xl reveal text-center md:text-left">
-                        <p class="text-[10px] uppercase font-bold tracking-widest text-outline-variant mb-6">Location
-                        </p>
-                        <div class="rounded-lg overflow-hidden mb-6 grayscale shadow-inner">
-                            <img src="map.png" alt="Location Map" class="w-full h-auto object-cover">
-                        </div>
-                        <div class="flex items-start gap-3 justify-center md:justify-start">
-                            <span class="material-symbols-outlined text-primary text-sm mt-1">location_on</span>
-                            <p class="text-sm text-on-surface-variant font-medium">Berbasis di Pekalongan, Indonesia.
-                            </p>
+                    <!-- Google Maps Embed Pekalongan -->
+                    <div
+                        class="bg-white glass-card rounded-[2rem] overflow-hidden border border-outline shadow-sm reveal">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63314.47267977558!2d109.61530505!3d-6.8923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e700c0f33fb3e77%3A0x5027a76e35220!2sPekalongan%2C%20Kota%20Pekalongan%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1714626000000!5m2!1sid!2sid"
+                            width="100%" height="220" style="border:0; filter: grayscale(15%) contrast(1.05);"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            title="Peta Pekalongan"></iframe>
+                        <div class="p-5 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary text-sm">location_on</span>
+                            <div>
+                                <p class="font-bold text-sm">Kota Pekalongan</p>
+                                <p class="text-xs text-on-surface-variant">Jawa Tengah, Indonesia</p>
+                            </div>
+                            <a href="https://maps.google.com/?q=Pekalongan" target="_blank"
+                                class="ml-auto text-[10px] font-bold uppercase tracking-wider text-primary hover:underline flex items-center gap-1">
+                                Buka Maps <span class="material-symbols-outlined text-[12px]">open_in_new</span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <div id="footer-placeholder"></div>
 
     <!-- @message-modal -->
     <div id="message-modal" class="fixed inset-0 z-[150] hidden items-center justify-center p-4">
-        <!-- Backdrop -->
         <div id="message-backdrop"
             class="absolute inset-0 bg-slate-900/60 backdrop-blur-md opacity-0 transition-opacity duration-300"></div>
-
-        <!-- Modal Content -->
         <div id="message-content"
             class="relative w-full max-w-3xl bg-white dark:bg-slate-900 p-8 md:p-12 rounded-[2.5rem] shadow-2xl border border-outline-variant/20 scale-95 opacity-0 transition-all duration-500 max-h-[90vh] overflow-y-auto">
             <button id="close-modal-btn"
@@ -247,7 +267,7 @@
                     <label class="text-[10px] uppercase font-bold tracking-widest text-outline-variant">Security
                         Verification</label>
                     <div class="flex items-center gap-4">
-                        <input type="text" id="verify-input" required placeholder="Verify code"
+                        <input type="text" id="verify-input" required placeholder="Masukkan kode"
                             class="flex-1 max-w-[200px]">
                         <div id="verify-code-display"
                             class="bg-primary/10 text-primary font-black px-6 py-2 rounded-xl tracking-[0.3em] select-none cursor-pointer border border-primary/20"
@@ -267,25 +287,21 @@
 
     <!-- @ui-feedback -->
     <div id="success-modal"
-        class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm transition-opacity">
+        class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm">
         <div
-            class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/20 shadow-2xl max-w-sm w-full text-center scale-95 transition-transform duration-300">
+            class="bg-white/90 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/20 shadow-2xl max-w-sm w-full text-center">
             <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span class="material-symbols-outlined text-4xl text-primary">check_circle</span>
             </div>
-            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Pesan Terkirim!</h3>
-            <p class="text-slate-500 dark:text-slate-400 text-sm mb-8">Terima kasih. Kami akan segera membalas email
-                Anda.</p>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Pesan Terkirim!</h3>
+            <p class="text-slate-500 text-sm mb-8">Terima kasih. Kami akan segera membalas email Anda.</p>
             <button onclick="closeSuccessModal()"
                 class="w-full bg-primary text-white py-4 rounded-2xl font-bold shadow-lg shadow-primary/20 active:scale-95 transition-all">Tutup</button>
         </div>
     </div>
 
-    <!-- Scripts -->
     <script src="components.js"></script>
     <script src="main.js"></script>
-    
-
 </body>
 
 </html>

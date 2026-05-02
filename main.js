@@ -146,10 +146,11 @@ function initStories() {
     const lockScreen = document.getElementById('lock-screen');
     const authStatus = document.getElementById('auth-status');
     const mainContent = document.getElementById('main-content');
-    const dots = document.querySelectorAll('.pin-dot');
+    const passInput = document.getElementById('story-pass-input');
+    const submitBtn = document.getElementById('submit-pass-btn');
+    const clearBtn = document.getElementById('clear-btn');
     const dataStream = document.getElementById('data-stream');
-    const SECRET_PIN = "2025";
-    let input = "";
+    const SECRET_KEY = "2025"; // Can be any string now
 
     if (typeof gsap !== 'undefined') {
         gsap.timeline().from("#lock-screen", { opacity: 0, duration: 1 }).from(".relative.mb-14", { scale: 0, opacity: 0, rotation: -180, duration: 0.8 }, "-=0.5");
@@ -160,32 +161,20 @@ function initStories() {
         setInterval(() => { if (dataStream) dataStream.innerText = dataStream.innerText.slice(1) + Math.floor(Math.random() * 2); }, 50);
     }
 
-    document.querySelectorAll('.numpad-btn[data-val]').forEach(btn => {
-        btn.addEventListener('click', () => {
-            btn.classList.add('flash'); setTimeout(() => btn.classList.remove('flash'), 150);
-            if (input.length < 4) { input += btn.getAttribute('data-val'); updateUI(); if (input.length === 4) validate(); }
-        });
-    });
+    const validate = () => {
+        const input = passInput.value;
+        if (!input) return;
 
-    document.getElementById('clear-btn')?.addEventListener('click', () => { input = ""; updateUI(); });
-
-    function updateUI() {
-        dots.forEach((dot, i) => {
-            dot.style.background = i < input.length ? "#1e293b" : "transparent";
-            dot.style.boxShadow = i < input.length ? "0 0 10px rgba(30,41,59,0.3)" : "none";
-        });
-        if (authStatus) authStatus.innerText = "Identity Required";
-    }
-
-    function validate() {
         if (authStatus) authStatus.innerText = "AUTHENTICATING...";
+
         setTimeout(() => {
-            if (input === SECRET_PIN) {
+            if (input.toUpperCase() === SECRET_KEY.toUpperCase()) {
                 if (authStatus) authStatus.innerText = "ACCESS GRANTED";
                 gsap.to(lockScreen, {
                     opacity: 0, filter: "blur(20px)", scale: 1.1, duration: 1, onComplete: () => {
                         lockScreen.style.display = "none";
                         mainContent.classList.remove('hidden');
+                        mainContent.classList.add('opacity-100', 'scale-100');
                         gsap.from("#main-content", { opacity: 0, y: 50, duration: 1 });
                         document.body.style.overflow = "auto";
                     }
@@ -193,10 +182,20 @@ function initStories() {
             } else {
                 if (authStatus) authStatus.innerText = "ACCESS DENIED";
                 lockScreen.animate([{ transform: 'translateX(-5px)' }, { transform: 'translateX(5px)' }, { transform: 'translateX(0)' }], { duration: 200, iterations: 2 });
-                input = ""; setTimeout(updateUI, 600);
+                passInput.value = "";
+                setTimeout(() => { if (authStatus) authStatus.innerText = "Identity Required"; }, 1000);
             }
         }, 800);
-    }
+    };
+
+    passInput?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') validate();
+    });
+
+    submitBtn?.addEventListener('click', validate);
+    clearBtn?.addEventListener('click', () => {
+        if (passInput) passInput.value = "";
+    });
 
     document.getElementById('face-id-btn')?.addEventListener('click', async () => {
         try {
@@ -207,7 +206,8 @@ function initStories() {
             setTimeout(() => {
                 stream.getTracks().forEach(t => t.stop());
                 document.getElementById('face-id-container')?.classList.add('hidden');
-                input = SECRET_PIN; validate();
+                passInput.value = SECRET_KEY;
+                validate();
             }, 3000);
         } catch (e) { if (authStatus) authStatus.innerText = "BIOMETRIC ERROR"; }
     });
@@ -220,13 +220,94 @@ function initStories() {
 function initProjects() { console.log("Projects Ready"); }
 
 function initContact() {
+    const trigger = document.getElementById('open-form-trigger');
+    const modal = document.getElementById('message-modal');
+    const backdrop = document.getElementById('message-backdrop');
+    const content = document.getElementById('message-content');
+    const closeBtn = document.getElementById('close-modal-btn');
     const form = document.getElementById('contact-form');
-    if (!form) return;
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert("Pesan Berhasil Dikirim!");
-        form.reset();
-    });
+    const verifyDisplay = document.getElementById('verify-code-display');
+    const verifyInput = document.getElementById('verify-input');
+    const successModal = document.getElementById('success-modal');
+
+    if (!trigger || !modal) return;
+
+    let currentCode = "";
+    const generateCode = () => {
+        currentCode = Math.floor(100000 + Math.random() * 900000).toString();
+        if (verifyDisplay) verifyDisplay.innerText = currentCode;
+    };
+
+    const openModal = () => {
+        generateCode();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        setTimeout(() => {
+            backdrop.classList.replace('opacity-0', 'opacity-100');
+            content.classList.replace('opacity-0', 'opacity-100');
+            content.classList.replace('scale-95', 'scale-100');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+        backdrop.classList.replace('opacity-100', 'opacity-0');
+        content.classList.replace('opacity-100', 'opacity-0');
+        content.classList.replace('scale-100', 'scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }, 300);
+        document.body.style.overflow = 'auto';
+    };
+
+    trigger.addEventListener('click', openModal);
+    closeBtn?.addEventListener('click', closeModal);
+    backdrop?.addEventListener('click', closeModal);
+    verifyDisplay?.addEventListener('click', generateCode);
+
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (verifyInput.value !== currentCode) {
+                alert("Kode verifikasi salah! Silakan coba lagi.");
+                generateCode();
+                verifyInput.value = "";
+                return;
+            }
+
+            // Simulate sending
+            const btn = document.getElementById('submit-btn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Mengirim...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                closeModal();
+                if (successModal) {
+                    successModal.classList.remove('hidden');
+                    successModal.classList.add('flex');
+                    setTimeout(() => {
+                        successModal.querySelector('div').classList.replace('scale-95', 'scale-100');
+                    }, 10);
+                }
+                form.reset();
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 1500);
+        });
+    }
+
+    // Global utility for success modal as it's called via onclick in HTML
+    window.closeSuccessModal = function () {
+        if (successModal) {
+            successModal.querySelector('div').classList.replace('scale-100', 'scale-95');
+            setTimeout(() => {
+                successModal.classList.add('hidden');
+                successModal.classList.remove('flex');
+            }, 300);
+        }
+    };
 }
 
 function initCertifications() {

@@ -53,9 +53,10 @@
                         Arsitek Analitik & Data Scientist</p>
                     <h1
                         class="font-headline text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface leading-[1.1] mb-6 md:mb-12">
-                        Ahmad Alimin</h1>
+                        <span class="text-gradient"></span>Ahmad Alimin</span>
+                    </h1>
                     <p
-                        class="font-body text-base md:text-2xl text-on-surface-variant max-w-xl mb-8 md:mb-12 leading-relaxed">
+                        class="font-body text-base md:text-2xl text-on-surface-variant max-w-xl mb-8 md:mb-12 leading-relaxed opacity-80">
                         Data Scientist & Praktisi Machine Learning. Mentransformasi data kompleks menjadi wawasan
                         strategis dan solusi AI yang berdampak.</p>
                     <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center md:justify-start">
@@ -69,18 +70,25 @@
                     </div>
                 </div>
                 <div
-                    class="w-full max-w-[260px] md:max-w-none md:col-span-4 lg:col-span-5 relative order-first md:order-last hero-image-container">
+                    class="w-full max-w-[260px] md:max-w-none md:col-span-4 lg:col-span-5 relative order-first md:order-last hero-image-container animate-float">
                     <div
-                        class="w-full aspect-square bg-surface-container-low rounded-full md:rounded-3xl flex items-center justify-center p-2 md:p-3 overflow-hidden group shadow-2xl shadow-primary/10 border-4 border-white dark:border-slate-800">
-                        <img class="w-full h-full object-cover rounded-full md:rounded-2xl transition-transform duration-700 group-hover:scale-105"
+                        class="w-full aspect-square bg-white/50 backdrop-blur-xl rounded-full md:rounded-3xl flex items-center justify-center p-2 md:p-3 overflow-hidden group shadow-2xl shadow-primary/10 border-4 border-white dark:border-slate-800">
+                        <img class="w-full h-full object-cover rounded-full md:rounded-2xl transition-transform duration-700 group-hover:scale-110"
                             src="profile_home.jpg" alt="Ahmad Alimin">
+                    </div>
+                    <!-- Decorative Element -->
+                    <div
+                        class="absolute -bottom-6 -right-6 w-24 h-24 bg-primary/10 blur-2xl rounded-full -z-10 animate-pulse">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- @intro-philosophy -->
-        <section class="py-16 md:py-40 bg-surface-container-low" id="philosophy-section">
+        <section class="py-24 md:py-48 bg-slate-50 relative" id="philosophy-section">
+            <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-primary/20 to-transparent">
+            </div>
             <div class="max-w-7xl mx-auto px-4 md:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center">
                     <div class="col-span-12 md:col-span-4 reveal text-center md:text-left">
@@ -163,35 +171,35 @@
                         class="hidden md:block text-outline-variant font-label text-xs uppercase tracking-widest bg-surface-container-low px-4 py-2 rounded-full">
                         Inventory / 01</div>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 stagger-group">
                     <div
-                        class="p-8 md:p-10 bg-surface-container-low rounded-3xl stagger-item flex flex-col items-center text-center group hover:bg-white transition-all border border-transparent hover:border-primary/10 hover:shadow-xl">
+                        class="p-10 bg-white glass-card rounded-[2.5rem] stagger-item flex flex-col items-center text-center group hover-lift transition-all border border-outline shadow-sm">
                         <div
-                            class="bg-primary/5 w-16 h-16 flex items-center justify-center rounded-2xl mb-8 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-primary text-3xl">analytics</span>
+                            class="bg-primary/5 w-20 h-20 flex items-center justify-center rounded-3xl mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                            <span class="material-symbols-outlined text-4xl">analytics</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-4">Analisis Lanjutan</h3>
-                        <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">Menerapkan pemodelan
+                        <h3 class="text-2xl font-bold mb-4 tracking-tight">Analisis Lanjutan</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed opacity-70">Menerapkan pemodelan
                             statistik dan algoritma untuk mengekstrak makna dari struktur data yang kompleks.</p>
                     </div>
                     <div
-                        class="p-8 md:p-10 bg-surface-container-low rounded-3xl stagger-item flex flex-col items-center text-center group hover:bg-white transition-all border border-transparent hover:border-primary/10 hover:shadow-xl">
+                        class="p-10 bg-white glass-card rounded-[2.5rem] stagger-item flex flex-col items-center text-center group hover-lift transition-all border border-outline shadow-sm">
                         <div
-                            class="bg-tertiary/5 w-16 h-16 flex items-center justify-center rounded-2xl mb-8 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-tertiary text-3xl">database</span>
+                            class="bg-primary/5 w-20 h-20 flex items-center justify-center rounded-3xl mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                            <span class="material-symbols-outlined text-4xl">database</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-4">SQL & Data</h3>
-                        <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">Orkestrasi database, kueri
+                        <h3 class="text-2xl font-bold mb-4 tracking-tight">SQL & Data</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed opacity-70">Orkestrasi database, kueri
                             kompleks, dan perancangan skema arsitektur untuk data skala besar.</p>
                     </div>
                     <div
-                        class="p-8 md:p-10 bg-surface-container-low rounded-3xl stagger-item flex flex-col items-center text-center group hover:bg-white transition-all border border-transparent hover:border-primary/10 hover:shadow-xl">
+                        class="p-10 bg-white glass-card rounded-[2.5rem] stagger-item flex flex-col items-center text-center group hover-lift transition-all border border-outline shadow-sm">
                         <div
-                            class="bg-secondary/5 w-16 h-16 flex items-center justify-center rounded-2xl mb-8 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-secondary text-3xl">psychology</span>
+                            class="bg-primary/5 w-20 h-20 flex items-center justify-center rounded-3xl mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                            <span class="material-symbols-outlined text-4xl">psychology</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-4">Machine Learning</h3>
-                        <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">Implementasi model
+                        <h3 class="text-2xl font-bold mb-4 tracking-tight">Machine Learning</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed opacity-70">Implementasi model
                             supervised dan unsupervised untuk analitik prediktif dan pengenalan pola digital.</p>
                     </div>
                 </div>
@@ -279,7 +287,7 @@
     <!-- Scripts -->
     <script src="components.js"></script>
     <script src="main.js"></script>
-    
+
 </body>
 
 </html>
