@@ -1,0 +1,81 @@
+/* 
+  Ahmad Alimin Portfolio - Global Styles (Clean Version)
+  Restored to original design after Notes updates.
+*/
+
+/* Material Symbols configuration */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Global Transitions */
+* {
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s, opacity 0.3s, transform 0.3s;
+}
+
+/* Navigation & Hamburger Animation */
+.nav-item {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#menu-toggle .line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: currentColor;
+    border-radius: 2px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+}
+
+#menu-toggle.active .line-1 {
+    transform: translateY(6px) rotate(45deg);
+}
+
+#menu-toggle.active .line-2 {
+    opacity: 0;
+}
+
+#menu-toggle.active .line-3 {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Utility Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.shimmer-active {
+    animation: shimmer 2s infinite;
+}

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Asesmen Pengetahuan AI & Data | Ahmad Alimin</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!-- Assets -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="global.css" />
+    <style>
+        /* Custom radio styles - Specific to Quiz */
+        .option-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            background-color: #f0f4f7;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .option-label:hover {
+            border-color: rgba(84, 95, 115, 0.3);
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        input[type="radio"]:checked+.option-label {
+            background-color: #e8eff3;
+            border-color: #545f73;
+            font-weight: 600;
+        }
+
+        input[type="radio"]:checked+.option-label .radio-circle {
+            border-color: #545f73;
+        }
+
+        input[type="radio"]:checked+.option-label .radio-circle::after {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .radio-circle {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #a9b4b9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .radio-circle::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-color: #545f73;
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+    </style>
+</head>
+
+<body class="bg-background font-body text-on-surface overflow-x-hidden">
+    <div id="header-placeholder"></div>
+    <main class="pt-32 pb-24 min-h-screen relative">
+        <section class="max-w-3xl mx-auto px-6 reveal">
+            <a href="contact.html" title="Kembali ke Kontak"
+                class="inline-flex items-center justify-center w-10 h-10 text-primary hover:-translate-x-1 transition-all mb-8 bg-surface-container-low rounded-full shadow-sm hover:shadow-md">
+                <span class="material-symbols-outlined text-xl">arrow_back</span>
+            </a>
+
+            <div class="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-outline-variant/10">
+                <div class="text-center mb-10 border-b border-outline-variant/10 pb-10">
+                    <div class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="material-symbols-outlined text-4xl text-primary animate-pulse">psychology</span>
+                    </div>
+                    <h1 class="font-headline text-3xl md:text-5xl font-black mb-4 tracking-tight">Kuis Wawasan AI & Data
+                    </h1>
+                    <p class="text-on-surface-variant max-w-lg mx-auto leading-relaxed text-sm md:text-base">Selesaikan
+                        tes interaktif ini untuk mengukur pemahaman Anda mengenai dasar-dasar ilmu data dan algoritma
+                        moderen.</p>
+                </div>
+
+                <!-- Form Kuis Moderen (Pengganti Google Form) -->
+                <form id="quiz-form" class="space-y-12">
+
+                    <!-- Pertanyaan 1 -->
+                    <div class="quiz-item">
+                        <h3 class="font-headline text-xl font-bold mb-4">1. Apa perbedaan mendasar antara Data Science
+                            dan Data Engineering?</h3>
+                        <div class="space-y-3">
+                            <label>
+                                <input type="radio" name="q1" value="A" required>
+                                <div class="option-label">
+                                    <div class="radio-circle"></div>
+                                    <span>Data Engineering berfokus pada infrastruktur (ETL), Data Science berfokus pada
+                                        analisis & prediksi.</span>
+                                </div>
+                            </label>
+                            <label>
+                                <input type="radio" name="q1" value="B">
+                                <div class="option-label">
+                                    <div class="radio-circle"></div>
+                                    <span>Keduanya adalah bidang yang sama persis tanpa perbedaan tugas.</span>
+                                </div>
+                            </label>
+                            <label>
+                                <input type="radio" name="q1" value="C">
+                                <div class="option-label">
+                                    <div class="radio-circle"></div>
+                                    <span>Data Science hanya membuat dashboard, sedangkan Data Engineering murni
+                                        matematika.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pertanyaan 2 -->
+                    <div class="quiz-item">
+                        <h3 class="font-headline text-xl font-bold mb-4">2. Algoritma apakah yang paling cocok digunakan
+                            untuk mendeteksi wajah dalam citra/gambar?</h3>
+                        <div class="space-y-3">
+                            <label>
+                                <input type="radio" name="q2" value="A" required>
+                                <div class="option-label">
+                                    <div class="radio-circle"></div>
+                                    <span>Linear Regression</span>
+                                </div>
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="B">
+                                <div class="option-label">
+                                    <div class="radio-circle"></div>
+                                    <span>Convolutional Neural Network (CNN)</span>
+                                </div>
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="C">
+                                <div class="option-label">
+                                    <div class="radio-circle"></div>
+                                    <span>K-Means Clustering</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pertanyaan 3 -->
+                    <div class="quiz-item">
+                        <h3 class="font-headline text-xl font-bold mb-4">3. Dalam Machine Learning, apa yang dimaksud
+                            dengan "Overfitting"?</h3>
+                        <div class="space-y-3">
+                            <label>
+                                <input type="radio" name="q3" value="A" required>
+                                <div class="option-label">
+                                    <div class="radio-circle"></div>
+                                    <span>Ketika proses komputasi memakan RAM komputer yang terlalu besar.</span>
+                                </div>
+                            </label>
+                            <label>
+                                <input type="radio" name="q3" value="B">
+                                <div class="option-label">
+                                    <div class="radio-circle"></div>
+                                    <span>Ketika model belajar terlalu dangkal dan gagal memprediksi semua data.</span>
+                                </div>
+                            </label>
+                            <label>
+                                <input type="radio" name="q3" value="C">
+                                <div class="option-label">
+                                    <div class="radio-circle"></div>
+                                    <span>Ketika model menghafal data latih secara berlebihan tapi buruk pada data riil
+                                        baru.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 pb-2 border-t border-outline-variant/10">
+                        <button type="submit"
+                            class="w-full bg-primary text-on-primary py-5 rounded-2xl font-bold text-lg hover:bg-primary-dim transition-all duration-300 shadow-xl shadow-primary/20 hover:scale-[1.02] flex items-center justify-center gap-3">
+                            Kirim Jawaban & Lihat Hasil <span class="material-symbols-outlined text-xl">analytics</span>
+                        </button>
+                    </div>
+
+                </form>
+
+                <!-- Panel Hasil (Tersembunyi Awalnya) -->
+                <div id="result-panel" class="hidden text-center py-8">
+                    <div
+                        class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="material-symbols-outlined text-5xl shadow-sm">verified</span>
+                    </div>
+                    <h2 class="font-headline font-black text-4xl mb-4">Skor Wawasan Anda: <span id="score-text"
+                            class="text-primary">0%</span></h2>
+                    <p id="feedback-desc"
+                        class="text-on-surface-variant max-w-md mx-auto mb-8 font-medium leading-relaxed"></p>
+
+                    <div
+                        class="bg-surface-container-low p-6 rounded-xl text-left text-sm mb-10 border border-outline-variant/20 shadow-inner">
+                        <p class="font-bold mb-3 flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary text-lg">info</span> Kunci Jawaban:</p>
+                        <ul class="list-disc pl-5 space-y-2 text-on-surface-variant">
+                            <li><strong>Q1:</strong> Data Eng untuk ETL infrastruktur, Data Sci untuk prediksi (A).</li>
+                            <li><strong>Q2:</strong> CNN (Convolutional Neural Network) paling optimal untuk citra
+                                vision (B).</li>
+                            <li><strong>Q3:</strong> Overfitting adalah saat model terlalu menghafal sehingga gagap pada
+                                data baru (C).</li>
+                        </ul>
+                    </div>
+
+                    <a href="contact.html" title="Kembali ke Kontak"
+                        class="inline-flex items-center justify-center w-12 h-12 bg-surface-container-low text-on-surface rounded-full hover:bg-slate-200 transition-all shadow-sm active:scale-95">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Confetti Canvas -->
+        <canvas id="confetti" class="fixed inset-0 pointer-events-none z-[100]"></canvas>
+    </main>
+
+    <!-- @footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- WhatsApp Floating Button -->
+    <button onclick="connectWA()"
+        class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 hover:shadow-xl hover:bg-[#20ba56] transition-all duration-300 flex items-center justify-center group"
+        aria-label="Hubungi via WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+            <path
+                d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+        </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="components.js"></script>
+    <script src="main.js"></script>
+    
+
+</body>
+
+</html>

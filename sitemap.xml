@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>https://al-dataengineer.github.io/Portofolio/</loc>
+      <lastmod>2024-04-30</lastmod>
+      <priority>1.00</priority>
+   </url>
+   <url>
+      <loc>https://al-dataengineer.github.io/Portofolio/pages/about.html</loc>
+      <lastmod>2024-04-30</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://al-dataengineer.github.io/Portofolio/pages/projects.html</loc>
+      <lastmod>2024-04-30</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://al-dataengineer.github.io/Portofolio/pages/certifications.html</loc>
+      <lastmod>2024-04-30</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://al-dataengineer.github.io/Portofolio/pages/contact.html</loc>
+      <lastmod>2024-04-30</lastmod>
+      <priority>0.70</priority>
+   </url>
+   <url>
+      <loc>https://al-dataengineer.github.io/Portofolio/pages/quiz.html</loc>
+      <lastmod>2024-04-30</lastmod>
+      <priority>0.50</priority>
+   </url>
+</urlset>

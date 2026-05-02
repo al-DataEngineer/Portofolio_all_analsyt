@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact | Ahmad Alimin</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!-- Assets -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="global.css" />
+
+    <style>
+        /* Input Primitives */
+        input,
+        select,
+        textarea {
+            background-color: transparent !important;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1) !important;
+            border-top: none !important;
+            border-left: none !important;
+            border-right: none !important;
+            border-radius: 0 !important;
+            padding: 12px 0 !important;
+            width: 100%;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none !important;
+            border-bottom-color: #354053 !important;
+        }
+    </style>
+</head>
+
+<body class="bg-background font-body text-on-surface overflow-x-hidden">
+    <div id="header-placeholder"></div>
+    <main class="pt-32">
+        <!-- @hero-contact -->
+        <section class="max-w-7xl mx-auto px-6 md:px-8 mb-16 md:mb-24 reveal">
+            <p class="font-label uppercase tracking-widest text-outline-variant mb-6 text-xs font-bold">Inquiry</p>
+            <h1
+                class="font-headline text-4xl md:text-6xl font-black tracking-tighter text-on-surface leading-[1.1] mb-12">
+                Mari bangun<br>sesuatu yang <span class="text-primary-dim">bermakna</span><br>bersama.
+            </h1>
+        </section>
+
+        <!-- @content-grid -->
+        <section class="max-w-7xl mx-auto px-6 md:px-8 mb-24 md:mb-40">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-20 items-start">
+
+                <!-- Left Column Group -->
+                <div class="md:col-span-7 space-y-12">
+                    <!-- Minimalist Inquiry Trigger -->
+                    <div id="open-form-trigger"
+                        class="bg-white dark:bg-slate-800 p-8 md:p-10 rounded-2xl reveal cursor-pointer group transition-all duration-500 border border-slate-200 dark:border-slate-700 hover:border-primary/30 shadow-md hover:shadow-2xl hover:-translate-y-1 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6">
+                        <div
+                            class="w-16 h-16 shrink-0 bg-primary/5 rounded-2xl flex items-center justify-center group-hover:bg-primary/10 group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500 shadow-inner">
+                            <span
+                                class="material-symbols-outlined text-3xl text-primary drop-shadow-sm">edit_document</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3
+                                class="text-2xl font-headline font-black mb-2 text-on-surface group-hover:text-primary transition-colors">
+                                Tulis Pesan</h3>
+                            <p class="text-on-surface-variant text-sm leading-relaxed mb-6 italic">Punya tantangan
+                                proyek
+                                atau ingin berkolaborasi? Klik kotak ini untuk langsung memulai percakapan.</p>
+                            <div
+                                class="inline-flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-widest bg-primary/5 px-4 py-2 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
+                                Buka Formulir <span
+                                    class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Section -->
+                    <div class="reveal mt-8">
+                        <h3 class="text-xl font-headline font-bold mb-6 flex items-center gap-3 text-on-surface">
+                            <span class="material-symbols-outlined text-primary">forum</span> Info Singkat
+                        </h3>
+                        <div class="grid grid-cols-1 gap-4">
+                            <div
+                                class="bg-surface-container-low/50 hover:bg-surface-container-low transition-colors border border-outline-variant/10 rounded-xl p-6">
+                                <h4 class="font-bold text-sm mb-2 text-on-surface">Berapa lama waktu respons email
+                                    biasanya?</h4>
+                                <p class="text-on-surface-variant text-sm leading-relaxed">Saya berusaha merespons
+                                    seluruh email profesional dan konsultasi dalam kurun waktu maksimal 1x24 jam kerja.
+                                </p>
+                            </div>
+                            <div
+                                class="bg-surface-container-low/50 hover:bg-surface-container-low transition-colors border border-outline-variant/10 rounded-xl p-6">
+                                <h4 class="font-bold text-sm mb-2 text-on-surface">Apakah terbuka untuk proyek lepas
+                                    (freelance)?</h4>
+                                <p class="text-on-surface-variant text-sm leading-relaxed">Ya, saya sangat terbuka.
+                                    Khususnya untuk pengembangan arsitektur analitik, ekstraksi data intelijen, maupun
+                                    perancangan model AI/ML skala spesifik.</p>
+                            </div>
+                            <div
+                                class="bg-surface-container-low/50 hover:bg-surface-container-low transition-colors border border-outline-variant/10 rounded-xl p-6">
+                                <h4 class="font-bold text-sm mb-2 text-on-surface">Menerima diskusi teknis & penelitian?
+                                </h4>
+                                <p class="text-on-surface-variant text-sm leading-relaxed">Tentu. Banyak rekam jejak
+                                    kerja sama saya terlahir dari rekan praktisi yang membutuhkan evaluasi skema data
+                                    dan pemecahan kasus analitik.</p>
+                            </div>
+
+                            <!-- Box Link Uji Wawasan (Quiz Test) -->
+                            <a href="quiz.html" target="_self"
+                                class="block bg-primary text-on-primary rounded-xl p-6 mt-2 hover:bg-primary-dim transition-all duration-300 shadow-md shadow-primary/20 hover:-translate-y-1 group border border-primary-dim">
+                                <div
+                                    class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                                    <div class="flex items-center gap-5">
+                                        <div
+                                            class="w-12 h-12 shrink-0 bg-white/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                                            <span
+                                                class="material-symbols-outlined text-white text-2xl">psychology</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-base mb-1 text-white">Uji Wawasan AI & Data</h4>
+                                            <p class="text-primary-fixed text-xs leading-relaxed opacity-90">Tes
+                                                interaktif via Google Form untuk mengukur pengetahuan analitik.</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="w-8 h-8 shrink-0 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-colors self-end sm:self-auto hidden sm:flex">
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Direct Channels -->
+                <div class="md:col-span-5 space-y-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-8">Saluran Langsung</h3>
+                        <div class="space-y-4">
+                            <div
+                                class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 flex items-center gap-6 reveal shadow-sm hover:shadow-md">
+                                <div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">mail</span>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] uppercase font-black text-outline-variant mb-1">Email</p>
+                                    <p class="font-bold">ahmadalimin700@gmail.com</p>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 flex items-center gap-6 reveal shadow-sm hover:shadow-md">
+                                <div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">account_circle</span>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] uppercase font-black text-outline-variant mb-1">LinkedIn</p>
+                                    <p class="font-bold">linkedin.com/in/ahmadalimin</p>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 flex items-center gap-6 reveal shadow-sm hover:shadow-md">
+                                <div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">code</span>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] uppercase font-black text-outline-variant mb-1">GitHub</p>
+                                    <p class="font-bold">github.com/aalimin</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map/Location -->
+                    <div class="bg-surface-container-low/50 p-8 md:p-10 rounded-xl reveal text-center md:text-left">
+                        <p class="text-[10px] uppercase font-bold tracking-widest text-outline-variant mb-6">Location
+                        </p>
+                        <div class="rounded-lg overflow-hidden mb-6 grayscale shadow-inner">
+                            <img src="map.png" alt="Location Map" class="w-full h-auto object-cover">
+                        </div>
+                        <div class="flex items-start gap-3 justify-center md:justify-start">
+                            <span class="material-symbols-outlined text-primary text-sm mt-1">location_on</span>
+                            <p class="text-sm text-on-surface-variant font-medium">Berbasis di Pekalongan, Indonesia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- @message-modal -->
+    <div id="message-modal" class="fixed inset-0 z-[150] hidden items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div id="message-backdrop"
+            class="absolute inset-0 bg-slate-900/60 backdrop-blur-md opacity-0 transition-opacity duration-300"></div>
+
+        <!-- Modal Content -->
+        <div id="message-content"
+            class="relative w-full max-w-3xl bg-white dark:bg-slate-900 p-8 md:p-12 rounded-[2.5rem] shadow-2xl border border-outline-variant/20 scale-95 opacity-0 transition-all duration-500 max-h-[90vh] overflow-y-auto">
+            <button id="close-modal-btn"
+                class="absolute top-6 right-6 w-12 h-12 bg-surface-container-low rounded-full flex items-center justify-center hover:bg-surface-container-high transition-colors">
+                <span class="material-symbols-outlined text-xl">close</span>
+            </button>
+            <h3 class="text-3xl font-headline font-black mb-10 tracking-tight flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-4xl">mail</span> Form Kontak
+            </h3>
+
+            <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                <div class="flex flex-col gap-2">
+                    <label class="text-[10px] uppercase font-bold tracking-widest text-outline-variant">Nama</label>
+                    <input type="text" name="user_name" required placeholder="Nama lengkap Anda">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="text-[10px] uppercase font-bold tracking-widest text-outline-variant">Email</label>
+                    <input type="email" name="user_email" required placeholder="anda@email.com">
+                </div>
+                <div class="md:col-span-2 flex flex-col gap-2">
+                    <label class="text-[10px] uppercase font-bold tracking-widest text-outline-variant">Subjek</label>
+                    <select name="subject">
+                        <option value="Kolaborasi Proyek">Kolaborasi Proyek</option>
+                        <option value="Peluang Kerja">Peluang Kerja</option>
+                        <option value="Pertanyaan Umum">Pertanyaan Umum</option>
+                    </select>
+                </div>
+                <div class="md:col-span-2 flex flex-col gap-2">
+                    <label class="text-[10px] uppercase font-bold tracking-widest text-outline-variant">Pesan</label>
+                    <textarea name="message" required placeholder="Bagaimana saya bisa membantu Anda?"
+                        rows="4"></textarea>
+                </div>
+                <!-- Anti-Spam Gate -->
+                <div class="md:col-span-2 flex flex-col gap-3">
+                    <label class="text-[10px] uppercase font-bold tracking-widest text-outline-variant">Security
+                        Verification</label>
+                    <div class="flex items-center gap-4">
+                        <input type="text" id="verify-input" required placeholder="Verify code"
+                            class="flex-1 max-w-[200px]">
+                        <div id="verify-code-display"
+                            class="bg-primary/10 text-primary font-black px-6 py-2 rounded-xl tracking-[0.3em] select-none cursor-pointer border border-primary/20"
+                            title="Refresh code">000000</div>
+                    </div>
+                </div>
+                <div class="md:col-span-2 pt-4">
+                    <button type="submit" id="submit-btn"
+                        class="w-full bg-primary text-on-primary px-12 py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-primary-dim transition-all active:scale-95 shadow-xl shadow-primary/20">
+                        <span>Kirim Pesan</span>
+                        <span class="material-symbols-outlined text-sm">send</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- @ui-feedback -->
+    <div id="success-modal"
+        class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm transition-opacity">
+        <div
+            class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/20 shadow-2xl max-w-sm w-full text-center scale-95 transition-transform duration-300">
+            <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="material-symbols-outlined text-4xl text-primary">check_circle</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Pesan Terkirim!</h3>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mb-8">Terima kasih. Kami akan segera membalas email
+                Anda.</p>
+            <button onclick="closeSuccessModal()"
+                class="w-full bg-primary text-white py-4 rounded-2xl font-bold shadow-lg shadow-primary/20 active:scale-95 transition-all">Tutup</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="components.js"></script>
+    <script src="main.js"></script>
+    
+
+</body>
+
+</html>

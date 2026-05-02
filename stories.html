@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secured Vault | Ahmad Alimin</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="global.css" />
+
+    <style>
+        body {
+            background-color: #f7f9fb;
+            overflow: hidden;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .lux-bg {
+            background: linear-gradient(135deg, #545f73 0%, #cbd5e1 100%);
+        }
+
+        /* Smooth Scale Animation on Click */
+        .numpad-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #1e293b;
+        }
+
+        .numpad-btn:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .numpad-btn.flash {
+            transform: scale(1.1);
+            background: #fff;
+            border-color: #545f73;
+        }
+
+        .pin-dot {
+            border-color: rgba(30, 41, 59, 0.2);
+        }
+
+        .noise {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.05;
+            z-index: 50;
+            background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+        }
+
+        /* Glitch Animation */
+        @keyframes glitch {
+            0% {
+                transform: translate(0)
+            }
+
+            20% {
+                transform: translate(-2px, 2px)
+            }
+
+            40% {
+                transform: translate(-2px, -2px)
+            }
+
+            60% {
+                transform: translate(2px, 2px)
+            }
+
+            80% {
+                transform: translate(2px, -2px)
+            }
+
+            100% {
+                transform: translate(0)
+            }
+        }
+
+        .glitch-hover:hover {
+            animation: glitch 0.3s infinite;
+            text-shadow: 2px 0 #00ff00, -2px 0 #ff00ff;
+        }
+
+        /* Matrix/Data Stream Background */
+        .data-stream {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.05;
+            z-index: -1;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            overflow: hidden;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .archive-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .archive-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .archive-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        @keyframes scan {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(300px);
+            }
+        }
+    </style>
+</head>
+
+<body class="text-slate-900 selection:bg-primary-container selection:text-on-primary-container">
+    <div class="noise"></div>
+    <div id="data-stream" class="data-stream"></div>
+
+    <!-- @lock-screen: Ensuring absolute vertical & horizontal center -->
+    <div id="lock-screen"
+        class="fixed inset-0 z-[100] lux-bg flex items-center justify-center transition-all duration-1000 p-6">
+
+        <div class="flex flex-col items-center justify-center w-full max-w-[320px] text-center">
+
+            <!-- 1. Logo Branding: Center Top -->
+            <div class="relative mb-14 flex items-center justify-center w-24 h-24">
+                <div class="absolute inset-0 border border-white/5 rounded-full animate-[spin_10s_linear_infinite]">
+                </div>
+                <div
+                    class="absolute inset-2 border border-white/10 rounded-full animate-[spin_15s_linear_infinite_reverse]">
+                </div>
+                <div class="w-16 h-16 rounded-2xl bg-white shadow-xl flex items-center justify-center overflow-hidden">
+                    <img src="favicon.png" alt="AL Logo" class="w-10 h-10">
+                </div>
+            </div>
+
+            <!-- 2. System Status -->
+            <div class="mb-14">
+                <h2 class="text-[10px] font-black uppercase tracking-[0.6em] text-slate-400 mb-2">Authenticated Archive
+                </h2>
+                <p id="auth-status" class="text-[9px] font-bold text-slate-400/50 tracking-widest uppercase">Identity
+                    Required</p>
+            </div>
+
+            <!-- 3. PIN Slots -->
+            <div class="flex justify-center items-center gap-8 mb-16 h-4">
+                <div class="pin-dot w-2 h-2 rounded-full border border-slate-200 transition-all duration-300"></div>
+                <div class="pin-dot w-2 h-2 rounded-full border border-slate-200 transition-all duration-300"></div>
+                <div class="pin-dot w-2 h-2 rounded-full border border-slate-200 transition-all duration-300"></div>
+                <div class="pin-dot w-2 h-2 rounded-full border border-slate-200 transition-all duration-300"></div>
+            </div>
+
+            <!-- 4. Numpad: Grid structure locked -->
+            <div class="grid grid-cols-3 gap-x-8 gap-y-4 justify-items-center">
+                <button
+                    class="numpad-btn w-16 h-16 flex items-center justify-center text-3xl font-extralight text-white/30 hover:text-white"
+                    data-val="1">1</button>
+                <button
+                    class="numpad-btn w-16 h-16 flex items-center justify-center text-3xl font-extralight text-white/30 hover:text-white"
+                    data-val="2">2</button>
+                <button
+                    class="numpad-btn w-16 h-16 flex items-center justify-center text-3xl font-extralight text-white/30 hover:text-white"
+                    data-val="3">3</button>
+
+                <button
+                    class="numpad-btn w-16 h-16 flex items-center justify-center text-3xl font-extralight text-white/30 hover:text-white"
+                    data-val="4">4</button>
+                <button
+                    class="numpad-btn w-16 h-16 flex items-center justify-center text-3xl font-extralight text-white/30 hover:text-white"
+                    data-val="5">5</button>
+                <button
+                    class="numpad-btn w-16 h-16 flex items-center justify-center text-3xl font-extralight text-white/30 hover:text-white"
+                    data-val="6">6</button>
+
+                <button
+                    class="numpad-btn w-16 h-16 flex items-center justify-center text-3xl font-extralight text-white/30 hover:text-white"
+                    data-val="7">7</button>
+                <button
+                    class="numpad-btn w-16 h-16 flex items-center justify-center text-3xl font-extralight text-white/30 hover:text-white"
+                    data-val="8">8</button>
+                <button
+                    class="numpad-btn w-16 h-16 flex items-center justify-center text-3xl font-extralight text-white/30 hover:text-white"
+                    data-val="9">9</button>
+
+                <!-- Reset Icon -->
+                <button
+                    class="numpad-btn w-16 h-16 flex items-center justify-center text-slate-400 hover:text-red-500 rounded-2xl"
+                    id="clear-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path>
+                        <line x1="18" y1="9" x2="12" y2="15"></line>
+                        <line x1="12" y1="9" x2="18" y2="15"></line>
+                    </svg>
+                </button>
+
+                <button
+                    class="numpad-btn w-16 h-16 flex items-center justify-center text-3xl font-light text-slate-600 hover:text-slate-900 rounded-2xl"
+                    data-val="0">0</button>
+
+                <!-- FaceID Trigger -->
+                <button
+                    class="numpad-btn w-16 h-16 flex items-center justify-center text-primary/60 hover:text-primary rounded-2xl"
+                    id="face-id-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <path d="M7 7h3v3H7z"></path>
+                        <path d="M14 7h3v3h-3z"></path>
+                        <path d="M14 14h3v3h-3z"></path>
+                        <path d="M7 14h3v3H7z"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Face ID Overlay (Centrally Aligned Over Everything) -->
+            <div id="face-id-container"
+                class="hidden absolute inset-0 z-[120] bg-black flex items-center justify-center">
+                <div class="relative w-64 h-64 rounded-full overflow-hidden border border-white/10">
+                    <video id="webcam" autoplay muted playsinline
+                        class="w-full h-full object-cover grayscale brightness-125 opacity-40"></video>
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,black_100%)]">
+                    </div>
+                    <div
+                        class="absolute top-0 left-0 w-full h-[1px] bg-primary shadow-[0_0_10px_#fff] animate-[scan_3s_linear_infinite]">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- @gallery -->
+    <main id="main-content"
+        class="hidden min-h-screen pt-40 pb-24 px-8 md:px-20 transition-all duration-1000 opacity-0 scale-95">
+        <h1
+            class="text-6xl md:text-9xl font-black italic tracking-tighter mb-20 text-slate-900 leading-none glitch-hover">
+            ARCHIVE.</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12" id="gallery-grid">
+            <!-- Animated Items -->
+            <div
+                class="archive-card aspect-[3/4] border border-slate-200 bg-white rounded-2xl flex flex-col items-center justify-center group hover:border-primary/20 hover:shadow-2xl transition-all">
+                <div class="relative w-full h-full flex items-center justify-center">
+                    <p
+                        class="text-[10px] font-bold tracking-[0.5em] text-slate-300 group-hover:text-primary transition-colors">
+                        DATA_DECRYPT</p>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <div class="h-1 bg-slate-100 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-primary w-1/3 group-hover:w-full transition-all duration-1000"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="archive-card aspect-[3/4] border border-slate-200 bg-white rounded-2xl flex flex-col items-center justify-center group hover:border-primary/20 hover:shadow-2xl transition-all">
+                <div class="relative w-full h-full flex items-center justify-center">
+                    <p
+                        class="text-[10px] font-bold tracking-[0.5em] text-slate-300 group-hover:text-primary transition-colors">
+                        ENCRYPT_02</p>
+                </div>
+            </div>
+            <div
+                class="archive-card aspect-[3/4] border border-slate-200 bg-white rounded-2xl flex flex-col items-center justify-center group hover:border-primary/20 hover:shadow-2xl transition-all">
+                <div class="relative w-full h-full flex items-center justify-center">
+                    <p
+                        class="text-[10px] font-bold tracking-[0.5em] text-slate-300 group-hover:text-primary transition-colors">
+                        SECURE_REF</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+</body>
+
+</html>
